@@ -16,9 +16,9 @@
 
 **距离度量**：
 
-曼哈顿距离：$d(x,y)=\sum\limits_{i=1}^{n}|x_{i}-y_{i}|$
+曼哈顿距离：<img src="http://latex.codecogs.com/gif.latex?d(x,y)=\sum\limits_{i=1}^{n}|x_{i}-y_{i}|"/>
 
-*欧氏距离*：$d(x,y)=\sqrt{\sum\limits_{i=1}^{n}(x_{i}-y_{i})^2}$  用于数值型数据
+*欧氏距离*：<img src="http://latex.codecogs.com/gif.latex?d(x,y)=\sqrt{\sum\limits_{i=1}^{n}(x_{i}-y_{i})^2}"/>用于数值型数据
 
 海明距离：Hamming distance             用于字符串型数据
 
