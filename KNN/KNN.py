@@ -65,7 +65,7 @@ def datingClassTest():                                           #错误率测�
     for i in range(numTestVecs):
         classifierResult = classify0(normMat[i,:],normMat[numTestVecs:m,:],datingLabels[numTestVecs:m],3)
         print("预测值：%d. 真实值：%d" % (classifierResult,datingLabels[i]))
-        if(classifierResult!=datingLabels[i]):errorCount+=1.0
+        if classifierResult!=datingLabels[i] :errorCount+=1.0
     print("错误率：%f" % (errorCount/numTestVecs))
 
 def classifyPerson():                                                          #模拟测试！
