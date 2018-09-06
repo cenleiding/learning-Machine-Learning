@@ -3,11 +3,13 @@
 """
 @author : CLD
 @time:2018/9/520:24
-@description: 决策树
+@description: 决策树<ID3算法>
 """
 
 from math import log
 import operator
+
+from DecisionTree import treePlotter
 
 
 def calcShannonEnt(dataSet):                           #计算香农信息熵，默认数据集的最后一个值是类别标签
@@ -92,9 +94,9 @@ def classify(inputTree,featLabels,testVec):            #运行训练后的决策
 def createDataSet():                                #测试数据
     dataSet=[[1,1,'yes'],
              [1,1,'yes'],
-             [1,0,'no'],
-             [0,1,'no'],
-             [0,1,'no']]
+             [1,1,'no'],
+             [1,1,'no'],
+             [1,1,'no']]
     labels=['no surfacing','flippers']             #labels单纯为了好看
     return dataSet,labels
 
@@ -112,6 +114,7 @@ def grabTree(filename):
 if __name__=='__main__':
     myDat,labels=createDataSet()
     myTree=createTree(myDat,labels.copy())
+    treePlotter.createPlot(myTree)
     print(classify(myTree,labels,[1,1]))
     storeTree(myTree,'myTree.txt')
     print(grabTree('myTree.txt'))
