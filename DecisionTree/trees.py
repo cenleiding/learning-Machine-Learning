@@ -12,7 +12,7 @@ import operator
 from DecisionTree import treePlotter
 
 
-def calcShannonEnt(dataSet):                           #计算香农信息熵，默认数据集的最后一个值是类别标签
+def calcShannonEnt(dataSet):                           #计算香农信息熵，默认数据集的最后一个列是类别标签
     numEntries=len(dataSet)
     labelCounts={}
     for featVec in dataSet:
