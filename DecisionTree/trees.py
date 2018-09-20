@@ -83,6 +83,7 @@ def classify(inputTree,featLabels,testVec):            #运行训练后的决策
     firstStr=list(inputTree.keys())[0]
     secondDict=inputTree[firstStr]
     featIndex=featLabels.index(firstStr)
+    classLabel='未知'
     for key in secondDict.keys():
         if testVec[featIndex]==key:
             if type(secondDict[key]).__name__=='dict':
