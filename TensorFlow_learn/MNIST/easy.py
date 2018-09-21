@@ -3,9 +3,8 @@
 """
 @author : CLD
 @time:2018/9/2014:44
-@description:
+@description: 简单级
 """
-import input_data
 import tensorflow as tf
 
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
@@ -32,5 +31,5 @@ for i in range(0,1000):
     correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1)) #预测是否和真实值相同
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))  #转换 布尔值->数值
     print(sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
-
+sess.close()
 
