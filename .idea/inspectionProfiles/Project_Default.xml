@@ -7,6 +7,8 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="input_data" />
+          <option value="word2vec" />
+          <option value="word2vec_optimized" />
         </list>
       </option>
     </inspection_tool>
