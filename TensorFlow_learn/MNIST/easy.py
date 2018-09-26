@@ -6,7 +6,7 @@
 @description: 简单级
 """
 import tensorflow as tf
-
+import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 #模型构建
 x=tf.placeholder('float',[None,784])
