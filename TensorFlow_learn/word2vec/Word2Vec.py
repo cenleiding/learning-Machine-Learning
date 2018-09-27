@@ -88,7 +88,7 @@ def generate_batch(batch_size,num_skips,skip_window):
     assert batch_size%num_skips == 0
     assert num_skips<=2*skip_window
     batch = np.ndarray(shape=(batch_size),dtype=np.int32)
-    labels = np.ndarray(shape=(batch_size,1),dtype=np.int32)
+    labels = np.ndarray(shape=(batch_size,1),dtype=np.int32)  #写明列为1是因为后面计算nce_loss需要
     span = 2*skip_window+1
     buffer = collections.deque(maxlen=span)  #队列用于存放当前可能用到的所有单词
 
@@ -125,12 +125,14 @@ def skip_gram_graph():
                 tf.truncated_normal([vocabulary_size,embedding_size],stddev=1/math.sqrt(embedding_size))) #每个向量的权重
             nce_biases = tf.Variable(tf.zeros([vocabulary_size]))                                         #噪声
 
+        #负采样的过程其实就是优先采词频高的词作为负样本。
         loss = tf.reduce_mean(tf.nn.nce_loss(weights=nce_weights,
                                              biases=nce_biases,
                                              labels=train_labels,      #真实值
                                              inputs=embed,             #预测值
                                              num_sampled=num_sampled,  #负采样噪声数
-                                             num_classes=vocabulary_size)) #计算nce损失
+                                             num_classes=vocabulary_size))
+
         optimizer = tf.train.GradientDescentOptimizer(1.0).minimize(loss) #梯度下降
 
         norm = tf.sqrt(tf.reduce_sum(tf.square(embeddings),1,keep_dims=True)) #向量空间标准化
@@ -149,7 +151,7 @@ def skip_gram_graph():
         for step in range(num_steps):
             batch_inputs,batch_labels=generate_batch(batch_size,num_skips,skip_window)
             feed_dict={train_inputs:batch_inputs,train_labels:batch_labels}
-            _,loss_val=session.run([optimizer,loss],feed_dict=feed_dict)
+            _,loss_val,embed2=session.run([optimizer,loss,embed],feed_dict=feed_dict)
             average_loss+=loss_val
 
             if step%2000 == 0:
