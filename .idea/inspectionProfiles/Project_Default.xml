@@ -9,6 +9,7 @@
           <option value="input_data" />
           <option value="word2vec" />
           <option value="word2vec_optimized" />
+          <option value="w2v.main.gensim_w2v" />
         </list>
       </option>
     </inspection_tool>
