@@ -5,7 +5,7 @@
 @time:2018/9/619:09
 @description: 眼镜问题尝试
 """
-from DecisionTree import trees,treePlotter
+from decisionTree import trees,treePlotter
 
 if __name__=='__main__':
     fr=open('lenses.txt')

@@ -10,7 +10,7 @@
 
 from math import log
 
-from DecisionTree import treePlotter
+from decisionTree import treePlotter
 
 
 def file2matrix(filename):

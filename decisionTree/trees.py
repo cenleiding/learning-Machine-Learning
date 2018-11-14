@@ -9,7 +9,7 @@
 from math import log
 import operator
 
-from DecisionTree import treePlotter
+from decisionTree import treePlotter
 
 
 def calcShannonEnt(dataSet):                           #计算香农信息熵，默认数据集的最后一个列是类别标签
