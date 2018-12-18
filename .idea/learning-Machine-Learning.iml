@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/机器学习笔记" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/naiveBayes" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/linear_model" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/svm" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
