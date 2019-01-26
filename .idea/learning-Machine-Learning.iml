@@ -12,6 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/naiveBayes" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/linear_model" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/svm" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plot_test" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
