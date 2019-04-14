@@ -13,6 +13,9 @@
       <sourceFolder url="file://$MODULE_DIR$/linear_model" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/svm" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/plot_test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Temp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/clustering" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pandas" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
