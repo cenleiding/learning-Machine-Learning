@@ -65,3 +65,7 @@ print(df2.where(df2>1,df2+100))
 print(df2.mask(df2>1))
 # query 贼灵活
 print(df2.query('col1<weight_column'))
+
+## 插入，移除
+df.pop('col1') ## pop 移除指定项，返回移除的项，原矩阵改变
+df.drop('col1') ## drop 返回移除后的矩阵，原矩阵不变
