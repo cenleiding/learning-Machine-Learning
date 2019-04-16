@@ -8,6 +8,9 @@
 """
 import numpy as np
 import pandas as pd
+from scipy import sparse
+from sklearn import preprocessing
+
 
 s= pd.Series([1,3,5,np.nan,6])
 
@@ -50,3 +53,12 @@ left = pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1, 2]})
 right = pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4, 5]})
 # print(pd.merge(left,right))
 print(pd.merge(left,right,on='key'))
+
+enc = preprocessing.OneHotEncoder()
+X = np.array([['male', 'from US', 'uses Safari'], ['female', 'from Europe', 'uses Firefox']])
+x1 = enc.fit_transform(X[:,0].reshape(-1,1))
+x2 = enc.fit_transform(X[:,1].reshape(-1,1))
+sp = sparse.hstack((x1,x2))
+df = pd.DataFrame({'A':[1,2],'B':[3,4]})
+sp = sparse.hstack((df['B'].values.reshape(-1,1),sp))
+print(sp.toarray())
